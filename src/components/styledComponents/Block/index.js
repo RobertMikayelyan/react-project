@@ -20,6 +20,8 @@ ${({ top }) => (top ? ` top: ${top}; ` : "")}
 ${({ left }) => (left ? ` left: ${left}; ` : "")}
 ${({ zIndex }) => (zIndex ? ` z-index: ${zIndex}; ` : "")}
 ${({ overflow }) => (overflow ? ` overflow: ${overflow}; ` : "")}
+${({ size }) => (size ? ` font-size: ${size}; ` : "")}
+
 ${({ wrap }) => (wrap ? " flex-wrap:wrap; " : "")}
 
 

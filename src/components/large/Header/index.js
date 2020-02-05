@@ -7,11 +7,20 @@ import styled from "styled-components";
 
 const MenuLink = styled(Link)`
   text-decoration: none;
+  letter-spacing: 3px;
+  color: pink;
 `;
 
 const Header = () => {
   return (
-    <Block height="70px;" background="yellow" flex justifyContent="flex-end">
+    <Block
+      height="70px;"
+      background="grey"
+      flex
+      justifyContent="space-evenly"
+      alignItems="center"
+      size="25px"
+    >
       <Block>
         <Text>
           <MenuLink to="/UserList">Users list</MenuLink>

@@ -1,13 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Block, Text } from "../../components";
+import { connect } from "react-redux";
 
 const Users = () => {
   const [data, setData] = useState(null);
+
+  const randomUsers = data => {
+    const set = new Set([]);
+
+    while (set.size < 5) {
+      const k = Math.floor(Math.random() * data.length);
+
+      set.add(k);
+    }
+    const users = [];
+
+    set.forEach(i => {
+      users.push(data[i]);
+    });
+    console.log(users);
+  };
+
   useEffect(() => {
     fetch("https://api.github.com/users")
       .then(response => {
         response.json().then(data => {
           setData(data);
+          randomUsers(data);
+          console.log(data);
         });
       })
       .catch(err => console.log(err));
@@ -31,4 +51,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default connect;

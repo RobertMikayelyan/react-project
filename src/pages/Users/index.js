@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Block, Text } from "../../components";
 import { connect } from "react-redux";
+import { UserListAction } from "../../actions/";
 
-const Users = () => {
+const Users = props => {
   const [data, setData] = useState(null);
 
   const randomUsers = data => {
@@ -18,7 +19,7 @@ const Users = () => {
     set.forEach(i => {
       users.push(data[i]);
     });
-    console.log(users);
+    props.dispatchUsers(users);
   };
 
   useEffect(() => {
@@ -51,4 +52,11 @@ const Users = () => {
   );
 };
 
-export default connect;
+export default connect(
+  state => ({}),
+  dispatch => ({
+    dispatchUsers(users) {
+      dispatch(UserListAction(users));
+    }
+  })
+)(Users);

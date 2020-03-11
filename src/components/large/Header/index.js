@@ -8,7 +8,7 @@ import styled from "styled-components";
 const MenuLink = styled(Link)`
   text-decoration: none;
   letter-spacing: 3px;
-  color: pink;
+  color: white;
 `;
 
 const Header = () => {
@@ -28,7 +28,12 @@ const Header = () => {
       </Block>
       <Block>
         <Text>
-          <MenuLink to="/ToDoList">To Do list</MenuLink>
+          <MenuLink to="/ToDoList">Random Users</MenuLink>
+        </Text>
+      </Block>
+      <Block>
+        <Text>
+          <MenuLink to="/AllUsers">All Users</MenuLink>
         </Text>
       </Block>
     </Block>
